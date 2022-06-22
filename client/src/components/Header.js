@@ -6,7 +6,7 @@ class Header extends Component {
             <nav>
                 <div className="nav-wrapper">
                     <a className="left brand-logo">
-                        Survey maker
+                        Survey Maker
                     </a>
                     <ul className="right">
                         <li>
