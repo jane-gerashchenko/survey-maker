@@ -48,7 +48,7 @@ function validate(values) {
         }
     });
 
-    errors.emails = validateEmails(values.emails);
+    errors.emails = validateEmails(values.emails || '');
 
     return errors;
 }
