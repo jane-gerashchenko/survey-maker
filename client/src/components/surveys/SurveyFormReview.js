@@ -20,8 +20,12 @@ const SurveyFormReview = ({ onCancel, formValues }) => {
         <div>
             <h5>Please confirm your entries</h5>
             {reviewFields}
-            <button className="yellow darken-3 btn-flat" onClick={onCancel}>
+            <button className="yellow darken-3 btn-flat white-text" onClick={onCancel}>
                 Back
+            </button>
+            <button className="green btn-flat right white-text">
+                Send Survey
+                <i className="material-icons right">email</i>
             </button>
         </div>
     );
