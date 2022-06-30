@@ -1,3 +1,4 @@
+// SurveyForm shows user form with editable input fields
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
