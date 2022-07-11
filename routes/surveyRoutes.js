@@ -11,6 +11,11 @@ module.exports = app => {
         res.send('Thanks for voting!');
     });
 
+    app.post('/api/surveys/webhooks', (req,res) => {
+        console.log('req.body', req.body);
+        res.send({});
+    });
+
     app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
         const { title, subject, body, recipients } = req.body;
 
@@ -20,7 +25,9 @@ module.exports = app => {
             body,
             recipients: recipients
                 .split(',')
-                .map(email => ({ email: email.trim() })),
+                .map(email => email.trim())
+                .filter(email => !!email)
+                .map(email => ({ email })),
             _user: req.user.id,
             dateSent: Date.now()
         });
